@@ -1,0 +1,57 @@
+.attendee-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    margin-left: 240px; /* to not overlap sidebar */
+  }
+  
+  .attendee-form-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .attendee-form .form-group {
+    margin-bottom: 1.2rem;
+  }
+  
+  .attendee-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .attendee-form input,
+  .attendee-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .attendee-form input:focus,
+  .attendee-form select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,193 @@
+.attendees-list-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-left: 20px;
+}
+
+.attendees-list-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.attendees-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.attendees-table th,
+.attendees-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.attendees-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #555;
+}
+
+.attendees-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-right: 0.4rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.view-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.view-btn:hover {
+  background-color: #0056b3;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* =====================
+   Modal Styles
+===================== */
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Close Button */
+.close-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   Responsive Adjustments
+===================== */
+
+@media (max-width: 768px) {
+  .attendees-list-container {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .attendees-table th,
+  .attendees-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .view-btn,
+  .edit-btn,
+  .delete-btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 1.2rem;
+  }
+
+  .modal-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .modal-content p {
+    font-size: 0.85rem;
+  }
+
+  .close-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
