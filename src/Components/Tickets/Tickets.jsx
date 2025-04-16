@@ -31,10 +31,12 @@ const Tickets = () => {
   };
 
   const handleCloseModal = () => setShowModal(false);
+
   const handleOpenViewModal = (ticket) => {
     setSelectedTicket(ticket);
     setShowViewModal(true);
   };
+
   const handleCloseViewModal = () => {
     setShowViewModal(false);
     setSelectedTicket(null);
@@ -139,24 +141,29 @@ const Tickets = () => {
       {showViewModal && selectedTicket && (
         <div className="modal-overlay">
           <div className="modal">
-            <h3>Ticket Details</h3>
-            <p><strong>Ticket Number:</strong> {selectedTicket.ticketNumber}</p>
-            <p><strong>Attendee:</strong> {getAttendeeName(selectedTicket.attendeeId)}</p>
-            <p><strong>Event:</strong> {getEventDetails(selectedTicket.eventId).name}</p>
-            <p><strong>Location:</strong> {getEventDetails(selectedTicket.eventId).location}</p>
-            <p><strong>Ticket Type:</strong> {selectedTicket.type}</p>
+            <div id="print-section">
+              <h3><i className="fa fa-ticket" aria-hidden="true"></i> <u>Ticket Details</u></h3>
+              <p><strong>Ticket Number:</strong> {selectedTicket.ticketNumber}</p>
+              <p><strong>Attendee:</strong> {getAttendeeName(selectedTicket.attendeeId)}</p>
+              <p><strong>Event:</strong> {getEventDetails(selectedTicket.eventId).name}</p>
+              <p><strong>Location:</strong> {getEventDetails(selectedTicket.eventId).location}</p>
+              <p><strong>Ticket Type:</strong> {selectedTicket.type}</p>
 
-            <div style={{ marginTop: '20px', textAlign: 'center' }}>
-              <QRCodeSVG
-                value={JSON.stringify(selectedTicket)}
-                size={128}
-                bgColor="#ffffff"
-                fgColor="#000000"
-              />
-              <p style={{ fontSize: '12px', color: '#555' }}>Scan for ticket info</p>
+              <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                <QRCodeSVG
+                  value={JSON.stringify(selectedTicket)}
+                  size={128}
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                />
+                <p style={{ fontSize: '12px', color: '#555' }}>Scan for ticket info</p>
+              </div>
             </div>
 
-            <button onClick={handleCloseViewModal}>Close</button>
+            <div className="modal-buttons">
+              <button onClick={handleCloseViewModal}>Close</button>
+              <button onClick={() => window.print()}>Print</button>
+            </div>
           </div>
         </div>
       )}

@@ -31,6 +31,13 @@
   .ticket-header button:hover {
     background-color: #218838;
   }
+
+  h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: inline-block;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2px;
+  }
   
   /* Modal styling */
   .modal-overlay {
@@ -155,5 +162,26 @@
   
   .ticket-table td button:nth-child(3):hover {
     background-color: #c82333;
+  }
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+  
+    #print-section, #print-section * {
+      visibility: visible;
+    }
+  
+    #print-section {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .modal-buttons {
+      display: none;
+    }
   }
   
