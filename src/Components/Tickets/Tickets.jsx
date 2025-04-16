@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { QRCodeSVG } from 'qrcode.react';
 import './Tickets.css';
 
 const Tickets = () => {
@@ -29,15 +30,11 @@ const Tickets = () => {
     setShowModal(true);
   };
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
+  const handleCloseModal = () => setShowModal(false);
   const handleOpenViewModal = (ticket) => {
     setSelectedTicket(ticket);
     setShowViewModal(true);
   };
-
   const handleCloseViewModal = () => {
     setShowViewModal(false);
     setSelectedTicket(null);
@@ -59,12 +56,14 @@ const Tickets = () => {
       ticketNumber: selectedTicket?.ticketNumber || ticketNumber,
       ...formData
     };
+
     let updatedTickets;
     if (selectedTicket) {
       updatedTickets = tickets.map((t) => (t.id === selectedTicket.id ? newTicket : t));
     } else {
       updatedTickets = [...tickets, newTicket];
     }
+
     setTickets(updatedTickets);
     localStorage.setItem('tickets', JSON.stringify(updatedTickets));
     setShowModal(false);
@@ -98,7 +97,7 @@ const Tickets = () => {
   return (
     <div className="ticket-page">
       <div className="ticket-header">
-        <h2>Tickets</h2>
+        <h2><i className="fa fa-ticket" aria-hidden="true"></i> Tickets</h2>
         <button onClick={handleOpenModal}>➕ Issue Ticket</button>
       </div>
 
@@ -146,6 +145,17 @@ const Tickets = () => {
             <p><strong>Event:</strong> {getEventDetails(selectedTicket.eventId).name}</p>
             <p><strong>Location:</strong> {getEventDetails(selectedTicket.eventId).location}</p>
             <p><strong>Ticket Type:</strong> {selectedTicket.type}</p>
+
+            <div style={{ marginTop: '20px', textAlign: 'center' }}>
+              <QRCodeSVG
+                value={JSON.stringify(selectedTicket)}
+                size={128}
+                bgColor="#ffffff"
+                fgColor="#000000"
+              />
+              <p style={{ fontSize: '12px', color: '#555' }}>Scan for ticket info</p>
+            </div>
+
             <button onClick={handleCloseViewModal}>Close</button>
           </div>
         </div>

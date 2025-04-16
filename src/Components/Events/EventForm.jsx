@@ -35,7 +35,7 @@ function EventForm() {
 
   return (
     <form onSubmit={handleSubmit} className="event-form">
-      <h2>Create New Event</h2>
+     <h2><i className="fa fa-plus-circle"></i> Create New Event</h2>
 
       <div className="form-group">
         <label htmlFor="name">Name</label>

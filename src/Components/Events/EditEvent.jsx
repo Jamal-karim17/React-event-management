@@ -44,7 +44,7 @@ function EditEvent() {
 
   return (
     <form onSubmit={handleSubmit} className="edit-event-form">
-      <h2>Edit Event</h2>
+     <h2><i className="fa fa-edit"></i> Edit Event</h2>
 
       <div className="form-group">
         <label htmlFor="name">Name</label>

@@ -12,7 +12,7 @@ function EventDetails() {
 
   return (
     <div className="event-details-card">
-      <h3>Event Details</h3>
+     <h3><i className="fa fa-info-circle"></i> Event Details</h3>
       <div className="detail-item">
         <strong>Name:</strong> {event.name}
       </div>

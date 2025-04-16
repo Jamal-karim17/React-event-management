@@ -13,6 +13,7 @@ import AttendeesList from './Components/Attendees/AttendeesList';
 
 import Ticket from './pages/Ticket'; 
 import Tickets from './Components/Tickets/Tickets';
+import 'font-awesome/css/font-awesome.min.css';
 
 function App() {
   return (
