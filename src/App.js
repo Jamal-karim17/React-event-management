@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Sidebar from './Components/Layout/Sidebar';
+import Home from './Components/Home/Home';
 
 import Events from './pages/Events';
 import EventForm from './Components/Events/EventForm';
@@ -21,6 +22,9 @@ function App() {
       <Sidebar />
       <div style={{ marginLeft: '240px', padding: '1rem', width: '100%' }}>
         <Routes>
+
+           {/* Home Page */}
+           <Route path="/dashboard" element={<Home />} />
           {/* Event Routes */}
           <Route path="/" element={<Events />}>
             <Route index element={<EventList />} />
@@ -38,6 +42,8 @@ function App() {
           {/* Ticket Routes */}
           <Route path="/tickets" element={<Ticket />} />
           <Route path="/tickets/issue" element={<Tickets />} />
+
+        
         </Routes>
       </div>
     </div>

@@ -8,10 +8,14 @@ const Sidebar = () => {
       <h2>🎟️ Event System</h2>
       <nav>
         <ul>
+          <li className="menu-header">🏠 Home</li>
+          <ul className="submenu">
+            <li><Link to="/dashboard">Dashboard</Link></li>
+          </ul>
+
           <li className="menu-header">📅 Events</li>
           <ul className="submenu">
-            <li><Link to="/">Event List</Link></li>
-           
+            <li><Link to="/events/list">Event List</Link></li>
           </ul>
 
           <li className="menu-header">👥 Attendees</li>
