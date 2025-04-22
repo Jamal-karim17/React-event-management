@@ -15,6 +15,7 @@ const Sidebar = () => {
 
           <li className="menu-header">📅 Events</li>
           <ul className="submenu">
+          <li><Link to="/events/create">Add Event</Link></li>
             <li><Link to="/events/list">Event List</Link></li>
           </ul>
 

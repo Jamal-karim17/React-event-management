@@ -23,15 +23,16 @@ function App() {
       <div style={{ marginLeft: '240px', padding: '1rem', width: '100%' }}>
         <Routes>
 
-           {/* Home Page */}
-           <Route path="/dashboard" element={<Home />} />
+          {/* Landing and Dashboard */}
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Home />} />
+
           {/* Event Routes */}
-          <Route path="/" element={<Events />}>
-            <Route index element={<EventList />} />
-            <Route path="create" element={<EventForm />} />
-            <Route path="events/:id" element={<EventDetails />} />
-            <Route path="events/:id/edit" element={<EditEvent />} />
-          </Route>
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/list" element={<EventList />} />
+          <Route path="/events/create" element={<EventForm />} />
+          <Route path="/events/:id" element={<EventDetails />} />
+          <Route path="/events/:id/edit" element={<EditEvent />} />
 
           {/* Attendee Routes */}
           <Route path="/attendees" element={<Attendees />} />
@@ -43,7 +44,6 @@ function App() {
           <Route path="/tickets" element={<Ticket />} />
           <Route path="/tickets/issue" element={<Tickets />} />
 
-        
         </Routes>
       </div>
     </div>

@@ -1,65 +1,88 @@
 .event-list-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-  }
-  
-  .event-list-container h3 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
-  }
-  
-  .event-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.event-list-container h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.event-table th,
+.event-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.event-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.event-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.no-events {
+  text-align: center;
+  color: #888;
+  padding: 1rem;
+}
+
+.action-link {
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
   .event-table th,
   .event-table td {
-    padding: 0.75rem 1rem;
-    border: 1px solid #ddd;
-    text-align: left;
+    font-size: 14px;
+    padding: 0.5rem 0.75rem;
   }
-  
-  .event-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-  
-  .event-table tr:nth-child(even) {
-    background-color: #fafafa;
-  }
-  
-  .no-events {
-    text-align: center;
-    color: #888;
-    padding: 1rem;
-  }
-  
-  .action-link {
-    margin-right: 0.5rem;
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  .action-link:hover {
-    text-decoration: underline;
-  }
-  
+
+  .action-link,
   .delete-btn {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.7rem;
-    border-radius: 6px;
-    cursor: pointer;
+    font-size: 12px;
   }
-  
-  .delete-btn:hover {
-    background-color: #c82333;
+
+  .event-list-container {
+    padding: 1rem 0.5rem;
   }
-  
+}

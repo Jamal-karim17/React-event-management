@@ -20,38 +20,40 @@ function EventList() {
     <div className="event-list-container">
       <h3>📋 Event List</h3>
 
-      <table className="event-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Date</th>
-            <th>Capacity</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {events.length === 0 ? (
+      <div className="table-wrapper">
+        <table className="event-table">
+          <thead>
             <tr>
-              <td colSpan="5" className="no-events">No events found.</td>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Date</th>
+              <th>Capacity</th>
+              <th>Actions</th>
             </tr>
-          ) : (
-            events.map((event) => (
-              <tr key={event.id}>
-                <td>{event.name}</td>
-                <td>{event.location}</td>
-                <td>{event.date}</td>
-                <td>{event.capacity}</td>
-                <td>
-                  <Link to={`/events/${event.id}`} className="action-link">View</Link>
-                  <Link to={`/events/${event.id}/edit`} className="action-link">Edit</Link>
-                  <button onClick={() => handleDelete(event.id)} className="delete-btn">Delete</button>
-                </td>
+          </thead>
+          <tbody>
+            {events.length === 0 ? (
+              <tr>
+                <td colSpan="5" className="no-events">No events found.</td>
               </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+            ) : (
+              events.map((event) => (
+                <tr key={event.id}>
+                  <td>{event.name}</td>
+                  <td>{event.location}</td>
+                  <td>{event.date}</td>
+                  <td>{event.capacity}</td>
+                  <td>
+                    <Link to={`/events/${event.id}`} className="action-link">View</Link>
+                    <Link to={`/events/${event.id}/edit`} className="action-link">Edit</Link>
+                    <button onClick={() => handleDelete(event.id)} className="delete-btn">Delete</button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

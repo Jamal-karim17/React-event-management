@@ -76,7 +76,7 @@ const Home = () => {
           <div>
             <h3>{events.length}</h3>
             <p>Events</p>
-            <Link to="/create" className="action-btn">+ Create Event</Link>
+            <Link to="/events/create" className="action-btn">+ Create Event</Link>
           </div>
         </div>
 
